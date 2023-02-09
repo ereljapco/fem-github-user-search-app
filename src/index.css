@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --ft-primary: 'Space Mono', monospace;
+  --clr-white: #ffffff;
+  --clr-gray-50: #fefefe;
+  --clr-gray-100: #f6f8ff;
+  --clr-gray-200: #c6c9d1;
+  --clr-gray-300: #989daa;
+  --clr-gray-700: #2b3442;
+  --clr-blue-300: #60abff;
+  --clr-blue-500: #0079ff;
+  --clr-grayish-blue-200: #a3b3cc;
+  --clr-grayish-blue-300: #778fb3;
+  --clr-grayish-blue-500: #4b6a9b;
+  --clr-grayish-blue-800: #1f2a48;
+  --clr-grayish-blue-900: #141c2f;
+  --body-bg: var(--clr-grayish-blue-900);
+  --body-bg-light: var(--clr-gray-100);
+  --container-bg: var(--clr-grayish-blue-800);
+  --text: var(--clr-white);
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 1rem;
+}
+
+:root.light {
+  --body-bg: var(--clr-gray-100);
+}
+
+body {
+  font-family: var(--ft-primary);
+  background-color: var(--body-bg);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--body-bg-light);
+  }
+}

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.header__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.header__theme-btn {
+  display: flex;
+  gap: 1rem;
+  color: inherit;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 0;
+}
