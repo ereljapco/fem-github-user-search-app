@@ -5,26 +5,33 @@ import Main from './layouts/Main';
 import SearchForm from './components/SearchForm';
 import getColorSheme from './layouts/Header/getColorScheme';
 import switchTheme from './layouts/switchTheme';
+import GithubUser from './components/GithubUser';
 import fetchGithubUser from './api/github/fetchGithubUser';
 
 function App() {
   const [theme, setTheme] = useState(getColorSheme());
-  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState('octocat');
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     switchTheme(theme);
   }, [theme]);
 
   useEffect(() => {
-    setUser(fetchGithubUser(user));
-  }, [user]);
+    async function fetchOcto() {
+      const userData = await fetchGithubUser(username);
+      setUserData(userData);
+    }
 
-  console.log(user);
+    fetchOcto();
+  }, [username]);
+
   return (
     <div className="container">
       <Header theme={theme} setTheme={setTheme} />
       <Main>
-        <SearchForm />
+        <SearchForm setUsername={setUsername} setUserData={setUserData} />
+        <GithubUser {...userData} />
       </Main>
     </div>
   );

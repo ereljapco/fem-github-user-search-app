@@ -27,12 +27,21 @@
   --body-bg-light: var(--clr-gray-100);
   --container-bg: var(--clr-grayish-blue-800);
   --text: var(--clr-white);
-  --border-radius-sm: 0.5rem;
+  --text-hl: var(--clr-white);
+  --text-link: var(--clr-blue-500);
+  --text-link-hover: var(--clr-grayish-blue-500);
+  --btn-bg: var(--clr-blue-500);
+  --btn-bg-hover: var(--clr-blue-300);
+  --border-radius-sm: 0.6rem;
   --border-radius-md: 1rem;
+  --transition-in: all ease-in 250ms;
 }
 
 :root.light {
   --body-bg: var(--clr-gray-100);
+  --container-bg: var(--clr-white);
+  --text: var(--clr-grayish-blue-500);
+  --text-hl: var(--clr-gray-700);
 }
 
 body {

@@ -3,10 +3,11 @@
   align-items: center;
   justify-content: space-between;
   color: var(--text);
-  margin-bottom: 2rem;
+  margin-bottom: 2.15rem;
 }
 
 .header__title {
+  color: var(--text-hl);
   font-size: 1.6rem;
   font-weight: 700;
 }
@@ -19,4 +20,9 @@
   text-transform: uppercase;
   background-color: transparent;
   border: 0;
+  transition: var(--transition-in);
+}
+
+.header__theme-btn:hover {
+  color: var(--text-link-hover);
 }

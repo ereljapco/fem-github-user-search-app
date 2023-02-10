@@ -1,11 +1,20 @@
-async function fetchGithubUser(user) {
-  if (!user) {
-    user = 'octocat';
-  }
-  const url = `https://api.github.com/users/${user}/`;
+import { Octokit } from 'https://cdn.skypack.dev/@octokit/core';
 
-  const response = await fetch(url);
-  console.log(response);
+async function fetchGithubUser(username) {
+  // if (!username) {
+  //   username = 'octocat';
+  // }
+
+  try {
+    const octokit = new Octokit({ auth: import.meta.env.VITE_GITHUB_AUTH_KEY });
+    const response = await octokit.request(`GET /users/${username}`, {
+      username: username,
+    });
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default fetchGithubUser;
