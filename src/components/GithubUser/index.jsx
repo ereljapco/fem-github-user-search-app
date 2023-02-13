@@ -1,6 +1,7 @@
 import '../../assets/styles/githubuser.css';
 import GithubUserDetailNa from './GithubUserDetailNa';
 import GithubUserDetail from './GithubUserDetail';
+import GithubUserJoinedDate from './GithubUserJoinedDate';
 
 function GithubUser(user) {
   const {
@@ -27,7 +28,7 @@ function GithubUser(user) {
         <a className="github-user__link" href={html_url}>
           @{login}
         </a>
-        <p className="github-user__joined-date">{created_at}</p>
+        <GithubUserJoinedDate date={created_at} />
       </header>
       <div className="github-user__info">
         <p className="github-user__bio">
