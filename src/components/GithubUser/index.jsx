@@ -4,6 +4,7 @@ import { ReactComponent as IconTwitter } from '../../assets/icons/icon-twitter.s
 import { ReactComponent as IconCompany } from '../../assets/icons/icon-company.svg';
 
 import '../../assets/styles/githubuser.css';
+import GithubUserDetailNa from './GithubUserDetailNa';
 
 function GithubUser(user) {
   const {
@@ -64,40 +65,44 @@ function GithubUser(user) {
           </div>
         </div>
         <ul className="github-user__details">
-          <li className="github-user__detail">
-            <IconLocation className="github-user__detail-icon" />
-            {location}
-          </li>
-          <li className="github-user__detail">
-            <IconWebsite className="github-user__detail-icon" />
-            {blog ? (
+          {location ? (
+            <li className="github-user__detail">
+              <IconLocation className="github-user__detail-icon" />
+              {location}
+            </li>
+          ) : (
+            <GithubUserDetailNa type="location" />
+          )}
+          {blog ? (
+            <li className="github-user__detail">
+              <IconWebsite className="github-user__detail-icon" />
               <a className="github-user__website-url" href={blog}>
                 {blog}
               </a>
-            ) : (
-              'Not Available'
-            )}
-          </li>
-          <li className="github-user__detail">
-            <IconTwitter className="github-user__detail-icon" />
-            {twitter ? (
+            </li>
+          ) : (
+            <GithubUserDetailNa type="blog" />
+          )}
+          {twitter ? (
+            <li className="github-user__detail">
+              <IconTwitter className="github-user__detail-icon" />
               <a className="github-user__website-url" href={twitterUrl}>
                 @{twitter}
               </a>
-            ) : (
-              'Not Available'
-            )}
-          </li>
-          <li className="github-user__detail">
-            <IconCompany className="github-user__detail-icon" />
-            {company ? (
+            </li>
+          ) : (
+            <GithubUserDetailNa type="twitter" />
+          )}
+          {company ? (
+            <li className="github-user__detail">
+              <IconCompany className="github-user__detail-icon" />
               <a className="github-user__company-url" href={companyUrl}>
                 {company}
               </a>
-            ) : (
-              'Not Available'
-            )}
-          </li>
+            </li>
+          ) : (
+            <GithubUserDetailNa type="company" />
+          )}
         </ul>
       </div>
     </section>

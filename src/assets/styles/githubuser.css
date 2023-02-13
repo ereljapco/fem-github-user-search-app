@@ -82,3 +82,7 @@
 .github-user__detail-icon path {
   fill: var(--text);
 }
+
+.github-user__detail-na {
+  opacity: 0.6;
+}
