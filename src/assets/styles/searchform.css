@@ -18,6 +18,7 @@
 
 .search-form__input {
   width: 100%;
+  color: var(--text);
   font-family: inherit;
   font-size: 0.78rem;
   background-color: transparent;
@@ -25,8 +26,12 @@
 }
 
 .search-form__input::placeholder {
-  color: var(--text);
+  color: inherit;
   opacity: 1;
+}
+
+.search-form__input:focus-within {
+  outline: 2px dotted var(--text);
 }
 
 .search-form__btn {
