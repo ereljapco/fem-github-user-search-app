@@ -1,10 +1,6 @@
-import { ReactComponent as IconLocation } from '../../assets/icons/icon-location.svg';
-import { ReactComponent as IconWebsite } from '../../assets/icons/icon-website.svg';
-import { ReactComponent as IconTwitter } from '../../assets/icons/icon-twitter.svg';
-import { ReactComponent as IconCompany } from '../../assets/icons/icon-company.svg';
-
 import '../../assets/styles/githubuser.css';
 import GithubUserDetailNa from './GithubUserDetailNa';
+import GithubUserDetail from './GithubUserDetail';
 
 function GithubUser(user) {
   const {
@@ -22,15 +18,6 @@ function GithubUser(user) {
     twitter,
     company,
   } = user;
-
-  if (twitter) {
-    var twitterUrl = `https://twitter.com/${twitter}`;
-  }
-
-  if (company) {
-    const companyName = company.slice(1);
-    var companyUrl = `https://github.com/${companyName}`;
-  }
 
   return (
     <section className="github-user">
@@ -66,40 +53,22 @@ function GithubUser(user) {
         </div>
         <ul className="github-user__details">
           {location ? (
-            <li className="github-user__detail">
-              <IconLocation className="github-user__detail-icon" />
-              {location}
-            </li>
+            <GithubUserDetail type="location" detail={location} />
           ) : (
             <GithubUserDetailNa type="location" />
           )}
           {blog ? (
-            <li className="github-user__detail">
-              <IconWebsite className="github-user__detail-icon" />
-              <a className="github-user__website-url" href={blog}>
-                {blog}
-              </a>
-            </li>
+            <GithubUserDetail type="blog" detail={blog} />
           ) : (
             <GithubUserDetailNa type="blog" />
           )}
           {twitter ? (
-            <li className="github-user__detail">
-              <IconTwitter className="github-user__detail-icon" />
-              <a className="github-user__website-url" href={twitterUrl}>
-                @{twitter}
-              </a>
-            </li>
+            <GithubUserDetail type="twitter" detail={twitter} />
           ) : (
             <GithubUserDetailNa type="twitter" />
           )}
           {company ? (
-            <li className="github-user__detail">
-              <IconCompany className="github-user__detail-icon" />
-              <a className="github-user__company-url" href={companyUrl}>
-                {company}
-              </a>
-            </li>
+            <GithubUserDetail type="company" detail={company} />
           ) : (
             <GithubUserDetailNa type="company" />
           )}
