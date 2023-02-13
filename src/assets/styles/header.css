@@ -26,3 +26,12 @@
 .header__theme-btn:hover {
   color: var(--text-link-hover);
 }
+
+.header__theme-btn-icon path {
+  fill: var(--text);
+  transition: var(--transition-in);
+}
+
+.header__theme-btn:hover .header__theme-btn-icon path {
+  fill: var(--text-link-hover);
+}

@@ -41,6 +41,7 @@
   --body-bg: var(--clr-gray-100);
   --container-bg: var(--clr-white);
   --text: var(--clr-grayish-blue-500);
+  --text-link-hover: var(--clr-gray-700);
   --text-hl: var(--clr-gray-700);
 }
 
