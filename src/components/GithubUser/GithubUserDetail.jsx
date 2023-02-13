@@ -36,7 +36,7 @@ export default function GithubUserDetail({ type, detail }) {
           @{detail}
         </a>
       ) : (
-        <a className="github-user__company-url" href={companyUrl}>
+        <a className="github-user__website-url" href={companyUrl}>
           {detail}
         </a>
       )}

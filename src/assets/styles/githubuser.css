@@ -83,6 +83,16 @@
   fill: var(--text);
 }
 
+.github-user__website-url {
+  color: inherit;
+  text-decoration: none;
+}
+
+.github-user__website-url:hover {
+  text-decoration: underline;
+}
+
+.github-user__no-bio,
 .github-user__detail-na {
-  opacity: 0.6;
+  opacity: 0.5;
 }
