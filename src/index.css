@@ -18,6 +18,7 @@
   --clr-gray-700: #2b3442;
   --clr-blue-300: #60abff;
   --clr-blue-500: #0079ff;
+  --clr-red-500: #f74646;
   --clr-grayish-blue-200: #a3b3cc;
   --clr-grayish-blue-300: #778fb3;
   --clr-grayish-blue-500: #4b6a9b;
@@ -30,6 +31,7 @@
   --text-hl: var(--clr-white);
   --text-link: var(--clr-blue-500);
   --text-link-hover: var(--clr-grayish-blue-500);
+  --text-error: var(--clr-red-500);
   --btn-bg: var(--clr-blue-500);
   --btn-bg-hover: var(--clr-blue-300);
   --border-radius-sm: 0.6rem;

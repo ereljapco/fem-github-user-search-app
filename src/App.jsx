@@ -6,31 +6,38 @@ import SearchForm from './components/SearchForm';
 import getColorSheme from './layouts/Header/getColorScheme';
 import switchTheme from './layouts/switchTheme';
 import GithubUser from './components/GithubUser';
-import fetchGithubUser from './api/github/fetchGithubUser';
+import setGithubUserData from './utils/setGithubUserData';
 
 function App() {
   const [theme, setTheme] = useState(getColorSheme());
   const [username, setUsername] = useState('octocat');
   const [userData, setUserData] = useState(null);
+  const [userExists, setUserExists] = useState(true);
 
   useEffect(() => {
     switchTheme(theme);
   }, [theme]);
 
   useEffect(() => {
-    async function fetchOcto() {
-      const userData = await fetchGithubUser(username);
-      setUserData(userData);
-    }
-
-    fetchOcto();
+    setGithubUserData(username, setUserData, setUserExists);
   }, [username]);
+
+  function searchUsername(e) {
+    e.preventDefault();
+    const searchInput = e.target.username.value;
+
+    setUsername(searchInput);
+  }
 
   return (
     <div className="container">
       <Header theme={theme} setTheme={setTheme} />
       <Main>
-        <SearchForm setUsername={setUsername} setUserData={setUserData} />
+        <SearchForm
+          searchUsername={searchUsername}
+          username={username}
+          userExists={userExists}
+        />
         <GithubUser {...userData} />
       </Main>
     </div>
