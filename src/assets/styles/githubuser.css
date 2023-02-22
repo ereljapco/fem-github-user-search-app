@@ -2,6 +2,7 @@
   display: grid;
   gap: 2rem 1.2rem;
   grid-template-columns: 4.35rem auto;
+  grid-template-columns: clamp(4.35rem, 18.56vw, 7.3rem);
   background-color: var(--container-bg);
   border-radius: var(--border-radius-md);
   padding: 2rem 1.5rem 3rem 1.5rem;
@@ -15,22 +16,28 @@
 
 .github-user__header {
   grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
   color: var(--text);
 }
 
 .github-user__username {
   color: var(--text-hl);
-  font-size: 1rem;
+  font-size: clamp(1rem, 4.26vw, 1.6rem);
+}
+
+.github-user__link,
+.github-user__joined-date,
+.github-user__bio,
+.github-user__detail {
+  font-size: clamp(0.8rem, 3.41vw, 0.925rem);
 }
 
 .github-user__link {
   color: var(--text-link);
-  font-size: 0.8rem;
   text-decoration: none;
-}
-
-.github-user__joined-date {
-  font-size: 0.8rem;
 }
 
 .github-user__info {
@@ -41,7 +48,6 @@
 
 .github-user__bio {
   color: var(--text);
-  font-size: 0.8rem;
   line-height: 2;
 }
 
@@ -56,6 +62,8 @@
 
 .github-user__stat-title {
   font-size: 0.675rem;
+  font-size: 0.8rem;
+  font-size: clamp(0.675rem, 2.88vw, 0.8rem);
   font-weight: 400;
   color: var(--text);
   margin-bottom: 0.5rem;
@@ -63,11 +71,14 @@
 
 .github-user__stat-count {
   color: var(--text-hl);
+  font-size: clamp(1rem, 4.26vw, 1.25rem);
 }
 
 .github-user__details {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem 0rem;
   list-style-type: none;
 }
 
@@ -76,7 +87,6 @@
   grid-template-columns: 1.5rem auto;
   gap: 0.5rem;
   color: var(--text);
-  font-size: 0.8rem;
 }
 
 .github-user__detail-icon path {
@@ -95,4 +105,24 @@
 .github-user__no-bio,
 .github-user__detail-na {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+  .github-user {
+    gap: 2rem 2.6rem;
+    padding: 2.4rem 2.5rem 3rem 2.5rem;
+  }
+
+  .github-user__stats {
+    text-align: left;
+    padding-inline: 2rem;
+  }
+
+  .github-user__stat-count {
+    font-weight: 800;
+  }
+
+  .github-user__details {
+    height: 4rem;
+  }
 }
