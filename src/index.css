@@ -10,8 +10,8 @@
 
 :root {
   --ft-primary: 'Space Mono', monospace;
-  --clr-white: #ffffff;
-  --clr-gray-50: #fefefe;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gray-50: hsl(0, 0%, 100%);
   --clr-gray-100: #f6f8ff;
   --clr-gray-200: #c6c9d1;
   --clr-gray-300: #989daa;
@@ -22,7 +22,7 @@
   --clr-grayish-blue-200: #a3b3cc;
   --clr-grayish-blue-300: #778fb3;
   --clr-grayish-blue-500: #4b6a9b;
-  --clr-grayish-blue-800: #1f2a48;
+  --clr-grayish-blue-800: hsl(224, 40%, 20%);
   --clr-grayish-blue-900: #141c2f;
   --body-bg: var(--clr-grayish-blue-900);
   --body-bg-light: var(--clr-gray-100);
@@ -60,5 +60,14 @@ button {
 @media (prefers-color-scheme: light) {
   body {
     color: var(--body-bg-light);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -1,5 +1,19 @@
 .container {
   width: 87vw;
+  max-width: 45.5rem;
   margin-inline: auto;
   margin-block: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 75vw;
+    margin-block: 8.75rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-block: 0;
+  }
 }
